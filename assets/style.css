@@ -1,0 +1,92 @@
+/* attempted to mimin the example as close as possible */
+:root {
+    --text-color: white;
+    --button-color: rgb(139, 24, 227);
+    --hover-color: rgb(255, 82, 209);
+}
+
+body {
+    font-family: Arial;
+    font-size: 110%;
+}
+
+a {
+    color: var(--button-color);
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+button {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: var(--button-color);
+    border-radius: 5px;
+    color: var(--text-color);
+    border: 0;
+    transition: background-color 0.1s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+.options button {
+    display: block;
+}
+
+ol {
+    padding-left: 0;
+    max-height: 500px;
+    overflow: auto;
+}
+
+li {
+    padding: 3px;
+    list-style: square inside none;
+}
+
+li:nth-child(odd) {
+    background-color: #edf5fc;
+}
+
+.main {
+    margin: 100px auto 0 auto;
+    max-width: 500px;
+}
+
+.hidden {
+    display: none;
+}
+
+.start {
+    text-align: center;
+    background-color: #f9ebff;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.time-limit {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.criticism {
+    font-size: 110%;
+    font-style: bold;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 3px solid black;
+    color: black;
+}
