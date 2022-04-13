@@ -11,36 +11,32 @@
 <body>
     <div class="score"><a href="score.html">View high scores</a></div>
 
-    <div class="time-limit">Time: <span id="time-limit">0 </span></div>
+    <div class="countdown">Time: <span id="countdown">0 </span></div>
 
     <main class="main">
-        <section id="beginning" class="start">
+        <div id="intro" class="intro">
             <h1>JavaScript Timed Quiz</h1>
             <p>
              Try to answer the following code-related questions within the time limit.
              Keep in mind that incorrect answers will penalize your score/time by 10 seconds!
             </p>
-            <button id="begin">Begin Quiz</button>
-        </section>
-
-        <section id="questions" class="hidden">
-            <h2 id="question-head"></h2>
-            <div id="options" class="options"></div>
-        </section>
-
-        <section id="stop" class="hidden">
-            <h2>CONGRATS YOU FINISHED!</h2>
-            <p>Your final score is: <span id="final-score"></span></p>
-            <p>
-                Enter your First and Last initial to track where you are are in the leaderboard: <input type="text" id="initials" max="2" />
-                <button id="submit">Submit</button>
-            </p>
-        </section>
-
-        <div id="criticism" class="criticism hidden"></div>
+            <button id="start-btn">Begin Quiz</button>
+        </div>
     </main>
-    
-    <script src="./assets/question.js"></script>
+
+        <section id="quiz">
+            <div id="questions"></div>
+            <div id="choices">
+                <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                <div class="choice" id="C" onclick="checkAnswer('C')"></div>
+            </div>
+        </section>
+
+        <section id="view-score">
+
+        </section>
+
     <script src="./assets/app.js"></script>
 </body>
 </html>
