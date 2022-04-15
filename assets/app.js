@@ -9,7 +9,7 @@ var choiceC = document.getElementById("choiceC");
 var countdown = document.getElementById("countdown");
 var score = 0;
 var timer;
-var timerCounter = 60;
+var timerCounter = 100;
 
 // setting the quizbox div to be hidden until the start quiz button is clicked
 questionBox.style.display = "none";
