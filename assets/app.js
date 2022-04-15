@@ -7,6 +7,9 @@ var choiceA = document.getElementById("choiceA");
 var choiceB = document.getElementById("choiceB");
 var choiceC = document.getElementById("choiceC");
 var countdown = document.getElementById("countdown");
+var criticismEl = document.getElementById("criticism");
+var submitBtn = document.getElementById("submit");
+
 var score = 0;
 var timer;
 var timerCounter = 100;
@@ -22,14 +25,15 @@ var questionsList = [
         choiceA: "myString",
         choiceB: "Txt",
         choiceC: "String",
-        correctAnswer: "choiceC"
+        correctAnswer: "choiceC",
     },
     
     {
-        question : "Java is short for 'JavaScript'",
-        choiceA: "TRUE",
-        choiceB: "FALSE",
-        correctAnswer: "choiceA" 
+        question : "What is the correct way to create an object called myObj of MyClass?",
+        choiceA: "class MyClass = new myObj();",
+        choiceB: "new myObj = MyClass();",
+        choiceC: "MyClass myObj = new MyClass();",
+        correctAnswer: "choiceC", 
     },
 
     {
@@ -37,7 +41,7 @@ var questionsList = [
         choiceA: "methodName()",
         choiceB: "(methodName)",
         choiceC: "methodName.",
-        correctAnswer: "choiceA"   
+        correctAnswer: "choiceA",   
     },
 
     {
@@ -45,7 +49,7 @@ var questionsList = [
         choiceA: "class()",
         choiceB: "class",
         choiceC: "className",
-        correctAnswer: "choiceB"   
+        correctAnswer: "choiceB",
     },
 
     {
@@ -53,18 +57,12 @@ var questionsList = [
         choiceA: "toUpperCase()",
         choiceB: "upperCase()",
         choiceC: "Tuc()",
-        correctAnswer: "choiceA"  
+        correctAnswer: "choiceA",
     },
 ];
 
 // setting a variable to use as an index value for the questionsList array
 var currentQuestion = 0
-
-// when btn is clicked timer starts and questions are presented
-//var displayQuestion = document.getElementById('start-btn');
-//    displayQuestion.addEventListener('click', function() {
-//        var div = document.getElementById('quiz');
-//    });
 
 // function that allows the quiz to begin and timer to start 
 var quizBegin = function () {
@@ -90,7 +88,7 @@ startBtn.addEventListener("click", quizBegin);
 
 
 
-// function that generates questions using the questionsList array objects and their properties
+// function that generates questions text
 function getQuestion() {
     quizQuestion.textContent = questionsList[currentQuestion].question;
     choiceA.textContent = questionsList[currentQuestion].choiceA;
@@ -127,14 +125,16 @@ function checkAnswer() {
     } else {
         timerCounter -= 5
     }
-    if (currentQuestion < questionsList.length - 1) {
+    //next question
+    if (currentQuestion < questionsList.length) {
         currentQuestion++
         getQuestion();
-        console.log(score,)
+        console.log(score)
     }
     else if (currentQuestion == questionsList.length) {
          clearInterval(timer)
          getInitials();
+         console.log(score)
     }
 }
 

@@ -1,0 +1,74 @@
+:root {
+    --text-color: white;
+    --button-color: rgb(250, 33, 250);
+    --hover-color: rgb(247, 161, 237);
+}
+
+body {
+    font-family: Arial;
+    font-size: 110%;
+}
+
+a {
+    color: var(--button-color);
+    text-decoration: none;
+    transition: color 0.1s;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+button {
+    display: inline-block;
+    margin: 5px;
+    padding: 9px 10px;
+    cursor: pointer;
+    font-size: 100%;
+    background-color: var(--button-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    border: 0;
+    transition: background-color 0.1s;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+.choices {
+    display: block;
+    padding-left: 3;
+    max-height: 500px;
+    overflow: auto;
+    list-style: square inside none;
+}
+
+
+.main {
+    margin: 100px auto 0 auto;
+    max-width: 500px;
+}
+
+.hidden {
+    display: none;
+}
+
+.intro {
+    text-align: center;
+    background-color: #ffe8ff;
+    padding: 40px;
+}
+
+.score {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.countdown {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+

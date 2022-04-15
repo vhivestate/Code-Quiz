@@ -25,7 +25,7 @@
     </main>
 
     <section>
-        <div id="questionBox">
+        <div id="questionBox" class="hidden">
              <h2 id="question"></h2>
                 
              <div id="choices">
@@ -33,8 +33,19 @@
                 <div><button class="choice" id="choiceB"></button></div>
                 <div><button class="choice" id="choiceC"></button></div>
              </div>
-
           </div>
+     </section> 
+
+     <section id="stop" class="hidden">
+        <p>Your final score is: <span id="final-score"></span></p>
+        <p>
+            Enter your First and Last initial to track where you are are in the leaderboard: <input type="text" id="initials" />
+            <button id="submit">Submit</button>
+        </p>
+    </section>
+    <div id="criticism" class="criticism hidden"></div>
+
+
 
     <script src="./assets/app.js"></script>
 </body>
