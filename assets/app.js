@@ -12,7 +12,7 @@ var submitBtn = document.getElementById("submit");
 
 var score = 0;
 var timer;
-var timerCounter = 100;
+var timerCounter = 60;
 
 // setting the quizbox div to be hidden until the start quiz button is clicked
 questionBox.style.display = "none";
@@ -103,22 +103,24 @@ choiceB.addEventListener("click", checkAnswer)
 choiceC.addEventListener("click", checkAnswer)
 
 
-// function that runs when game is over that prompts the user to enter their initials to be used to log highscore
+// prompts the user to enter their initials to be used to log highscore
 var getInitials = function () {
     var initials = "";
     while (initials === "" || initials == null) {
         initials = prompt("Please enter your initials to log your score.");
     }
     console.log("Your intitials are " + initials);
-    countdown.textContent = "Great job " + initials + "! You finished with a score of " + score + " with " + timerCounter + " seconds left! Come back later or refresh the page to try again.";
-    localStorage.setItem('Saved Score', initials + score + timerCounter);
+    countdown.textContent = "Great job " + initials + "! You finished with " + timerCounter + " seconds left! Come back later or refresh the page to try again.";
+    localStorage.setItem('Saved Score', initials + timerCounter);
 }
 
 
-
+// Checks to see if answer is correct if not removes time
 function checkAnswer() {
     var answerSelection = this.textContent;
-    console.log(answerSelection);
+    console.log(currentQuestion);
+    console.log(questionsList.length);
+
     if (answerSelection == questionsList[currentQuestion].correctAnswer) {
         score += 10;
         currentQuestion++
@@ -126,12 +128,12 @@ function checkAnswer() {
         timerCounter -= 5
     }
     //next question
-    if (currentQuestion < questionsList.length) {
+    if (currentQuestion < questionsList.length - 1 ) {
         currentQuestion++
         getQuestion();
         console.log(score)
     }
-    else if (currentQuestion == questionsList.length) {
+    else if (currentQuestion == questionsList.length - 1 ) {
          clearInterval(timer)
          getInitials();
          console.log(score)
