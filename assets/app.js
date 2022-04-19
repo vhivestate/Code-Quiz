@@ -86,8 +86,6 @@ var quizBegin = function () {
 startBtn.addEventListener("click", quizBegin);
 
 
-
-
 // function that generates questions text
 function getQuestion() {
     quizQuestion.textContent = questionsList[currentQuestion].question;
